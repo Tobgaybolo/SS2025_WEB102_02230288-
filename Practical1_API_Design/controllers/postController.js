@@ -6,7 +6,7 @@ const { posts, users} = require('../utils/mockData');
 // @route   GET /api/posts
 // @access  Public
 exports.getPosts = asyncHandler(async (res, req, next) => {
-    // Padination
+    // Pagination
     const page = parseInt(req.quers.page, 10) || 1;
     const limit = parseInt(req.quers.limit, 10) || 10;
     const startIndex = (page - 1) * limit;

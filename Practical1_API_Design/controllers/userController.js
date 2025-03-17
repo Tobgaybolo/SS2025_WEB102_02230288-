@@ -92,7 +92,7 @@ exports.createUser = asyncHandler(async (req, res, next) => {
 // @desc    Update user
 // @route   PUT /api/users/:id
 // @access  Private (we'll simulate this)
-exposts.updateUser = asyncHandler(async (req, res, next) => {
+exports.updateUser = asyncHandler(async (req, res, next) => {
     let user = users.find(user => user.id === req.params.id);
 
     if (!user) {
