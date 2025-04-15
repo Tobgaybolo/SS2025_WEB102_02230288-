@@ -5,7 +5,7 @@ const { posts, users} = require('../utils/mockData');
 // @desc    Get all posts
 // @route   GET /api/posts
 // @access  Public
-exports.getPosts = asyncHandler(async (res, req, next) => {
+exports.getPosts = asyncHandler(async (req, res, next) => {
     // Pagination
     const page = parseInt(req.quers.page, 10) || 1;
     const limit = parseInt(req.quers.limit, 10) || 10;
@@ -60,7 +60,7 @@ exports.getPosts = asyncHandler(async (res, req, next) => {
 // @desc    Get single post
 // @route   GET /api/posts/:id
 // @access  Public
-exports.getPost =  asyncHandler(async (res, req, next) => {
+exports.getPost =  asyncHandler(async (req, res, next) => {
     const post = posts.find(post => post.id === req.params.id);
 
     if (!post) {
@@ -90,7 +90,7 @@ exports.getPost =  asyncHandler(async (res, req, next) => {
 // @desc    Create new post
 // @route   POST /api/posts
 // @access  Private (we'll simulate this)
-exports.createPost = asyncHandler(async (res, req, next) => {
+exports.createPost = asyncHandler(async (req, res, next) => {
     // Simulate authentication
     const userId = req.header('X-User-Id');
     if (!userId) {
